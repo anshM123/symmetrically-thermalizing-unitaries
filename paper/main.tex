@@ -226,15 +226,15 @@ for two-mode squeezing.
 
 \textit{Machine-checked proof.}---To exclude errors in the combinatorial and analytic parts of the argument, we have
 formalized the complete proof of the existence statement of Theorem~1 in Lean~4 with
-Mathlib~\cite{Lean2021,Mathlib2020,repo}; the extension to $N$ systems relies on Kirwan's theorem, which is not
-formalized. The
+Mathlib~\cite{Lean2021,Mathlib2020,repo}. The
 formal theorem \lean{STUProof.stu\_exists\_hermitian} states, for every $d$, every Hermitian matrix $H$, and every
 $0\le\beta'\le\beta$ with $\beta>0$, that a unitary exists whose two marginals equal $\tau_{\beta'}$. The thermal state
 is defined through Mathlib's matrix exponential, and the partial traces are defined explicitly. The files used by
 this theorem contain about 7800 lines (the repository also holds superseded certificate-based proofs for $d\le40$),
 and the whole development is checked in under an hour on a desktop computer. The final theorem depends only on Lean's
 three standard axioms (propositional extensionality, choice, and quotient soundness); it contains no unproved
-statements and does not trust compiled code. Formal verification has recently reached quantum information theory,
+statements and does not trust compiled code. Theorem~2 is formalized as well (about 2600 further lines, same axioms):
+unconditionally for even $N$ and for $d\le3$, and for every $N$ with Kirwan's theorem as an explicit hypothesis. Formal verification has recently reached quantum information theory,
 for example the generalized quantum Stein's lemma~\cite{Meiburg2025} and the rigidity of the CHSH
 game~\cite{ZhaoYu2026}. Independent numerical and exact-arithmetic checks of the construction are reported in the
 Supplemental Material~\cite{SM}.

@@ -84,7 +84,10 @@ dipole amplitude is fixed by identities for alternating harmonic sums. The compl
 every Hermitian $H$ (via the case $H=\diag(E)$ with sorted energies and a local unitary), has been
 formalised in Lean~4 with Mathlib and uses only Lean's standard axioms. We also show that the
 stronger statement ``every spectrum majorized by the initial one is symmetrically reachable'' is
-false in every dimension $d\ge 4$.
+false in every dimension $d\ge 4$. Finally, we prove that the result extends to any number $N\ge2$ of identical
+systems, with every one-body marginal thermal at $\beta'$. This extension is formalised in Lean as well: without
+further assumptions for even $N$ and for $d\le3$, and in general with Kirwan's convexity theorem as an explicit
+hypothesis.
 \end{abstract}
 
 \maketitle
@@ -92,7 +95,8 @@ false in every dimension $d\ge 4$.
 \noindent\emph{About this document.} This Supplemental Material is self-contained. It gives the complete
 proof of the main result of the Letter (Theorem~1 there; Theorems~\ref{thm:main} and~\ref{thm:diag} here),
 every lemma of the construction, the correspondence between the proof and the Lean~4 formalisation
-(Section~\ref{sec:lean}), the counterexample to the strong spectral form (Section~\ref{sec:remarks}), and the list of
+(Section~\ref{sec:lean}), the counterexample to the strong spectral form (Section~\ref{sec:remarks}), the proof for any number of systems (Theorem~2 of the Letter;
+Theorem~\ref{thm:nparty} here) and its formalisation (Section~\ref{sec:nparty}), and the list of
 independent computer checks (Appendix~\ref{app:checks}). The formalisation, certificates, scripts and logs are
 available at \url{https://github.com/anshM123/symmetrically-thermalizing-unitaries}.
 
@@ -1822,6 +1826,31 @@ For $d\ge4$ (D) can fail at strong heating.
 For $d\le3$, every $N\ge2$, Hermitian $H$ and $0\le\beta'\le\beta$, the chain built from the explicit $2$-STU of
 Theorem~\ref{thm:main} and the pairs construction is an explicit $N$-STU, real orthogonal in the energy eigenbasis.
 \end{proposition}
+
+\subsection{Formal verification}\label{sec:nparty-lean}
+The results of this section are formalised in Lean~4 in the library \lean{NSTUProof} of the repository
+\cite{STUrepo}. It imports the two-system development of Section~\ref{sec:lean} and uses the same toolchain and
+Mathlib revision. The one-body marginal is defined explicitly by
+$(\mathrm{marg}_c\,\rho)_{ab}=\sum_{y:\,y_c=a}\rho_{y,\,y[c\mapsto b]}$, where $y[c\mapsto b]$ is $y$ with its $c$-th
+entry replaced by $b$, and the initial state is $\diag\big(\prod_c p_{x_c}\big)$ with $p=\gamma_\beta(E)$. The main
+theorems are the following.
+\begin{itemize}
+\item \lean{nstu\_exists\_of\_even}: Theorem~\ref{thm:nparty} for every even $N$, without further assumptions.
+\item \lean{nstu\_exists\_small\_d}: Theorem~\ref{thm:nparty} for $d\le3$ and every $N\ge2$, without further
+assumptions. This is the existence statement of Proposition~\ref{prop:smalld}; condition (D) for $d=2,3$ is
+certified by explicit nonnegative combinations of the ordering and MLR constraints.
+\item \lean{nstu\_exists\_kirwan}: Theorem~\ref{thm:nparty} for every $N\ge2$ and every $d$, under the explicit
+hypothesis \lean{KirwanSymmetricConvexityN} that the symmetric marginal spectra form a convex set. This hypothesis is
+proved to follow from \lean{KirwanConvexityN}, the statement of Kirwan's theorem for $U(d)^N$.
+\item \lean{vk\_reachableN} and \lean{binPacking\_tails}: Lemmas~\ref{lem:vertexN} and~\ref{lem:binN}, without
+further assumptions.
+\end{itemize}
+The versions \lean{nstu\_exists\_even\_hermitian}, \lean{nstu\_exists\_small\_d\_hermitian} and
+\lean{nstu\_exists\_kirwan\_hermitian} hold for every Hermitian $H$, with the thermal state of Section~\ref{sec:lean}.
+The script \lean{check\_nstu.sh} elaborates the roughly $2600$ lines in about four minutes and prints the axioms of
+$41$ declarations. Each depends only on \lean{propext}, \lean{Classical.choice} and \lean{Quot.sound}, and no
+\lean{sorry}, \lean{native\_decide} or added axiom occurs. Kirwan's theorem itself is not formalised, so for an odd
+number of systems with $d\ge4$ the formal proof is conditional on it.
 
 \subsection{Numerical verification}
 \begin{itemize}

@@ -79,4 +79,6 @@ every one-body marginal of τ_β^⊗N becomes τ_β′. The proof is in Section 
 an explicit N-party version of the reachable points v_k (circulant mixing plus bin packing) with Kirwan's convexity
 theorem for U(d)^N and Lemma 5 (`lemma5`). Explicit Kirwan-free constructions cover d ≤ 3 (a chain of one-sided
 heating steps after the two-system unitary) and even N (pairing). The proof notes, scripts and logs are in
-`n-systems/`, starting with `n-systems/PROOF.md`. This part is not formalized in Lean.
+`n-systems/`, starting with `n-systems/PROOF.md`. It is formalized in Lean in `lean/NSTUProof` (`bash check_nstu.sh`):
+without further assumptions for even N and for d ≤ 3, and for every N with Kirwan's theorem as an explicit
+hypothesis.

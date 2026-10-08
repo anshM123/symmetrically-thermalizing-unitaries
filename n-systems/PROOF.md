@@ -16,6 +16,7 @@ written separately from the scripts here, is in `verify-independent/`.
 | OSH for every $d$ at weak heating (condition "$x$ sorted") | **proved**, explicit (Prop. 3.4c) | pairs construction |
 | OSH for $d\ge4$ in general | **open**. Numerically true: 0 counterexamples (Sec. 4) | |
 | Kirwan-free proof for odd $N\ge3$ and $d\ge4$ | **open**. Would follow from OSH for $d\ge4$ | |
+| Lean formalisation | **done** (`lean/NSTUProof`): even $N$ and $d\le3$ without further assumptions; every $N$ with Kirwan as an explicit hypothesis | `bash check_nstu.sh`; log `logs/lean_check_nstu.log` |
 
 Answer to "is OSH true?": in every test, yes. The tests cover $d=2..6$ with full unitaries and $d\le10$ with
 exact LCS LPs, extreme and degenerate spectra, and $\beta'/\beta$ up to $0.9999$. The earlier signs of trouble
@@ -272,15 +273,16 @@ Kirwan-free), $N=3,4$: marginal error at most $5\cdot10^{-14}$.
    would need an analysis comparable to the paper's interval uniformisations. OSH is not convex in the
    target in an obvious way, because the initial state $q\otimes p$ depends on $q$. So the clipped-point (Lemma T)
    strategy does not transfer directly.
-4. **Not formalised.** The $N$-party vertex lemma and the chain lemma are not in Lean. They are natural extensions
-   of `vk_reachable`/`exists_binPacking` and `STU.lean` (with an $N$-party Kirwan hypothesis).
+4. **Formalised (2026-10-08).** The $N$-party LCS principle, the vertex lemma, the bin packing lemma, the chain
+   step, Theorem A (with Kirwan's theorem as an explicit hypothesis) and Theorem B are in Lean, in
+   `lean/NSTUProof` (development log: `research-log/NSTU_formalisation_log.md`). Kirwan's theorem itself is not
+   formalised.
 5. **Edge cases.** These are handled: ties in $E$, $\beta'=0$, $\beta'=\beta$, $n=1$, $n=d$. Negative temperatures
    are not covered.
 
 **Time estimate.**
 - Theorem A as a written proof: done here and in the Supplemental Material, pending external review.
-- Lean formalisation of Lemma 2.1 plus the $N$-party Kirwan route with Kirwan as a hypothesis: about 1–2 weeks.
-- Lean formalisation of Theorem B (pairs OSH plus the $d=3$ vertex certificate plus the chain): about 1 week.
+- Lean formalisation of Lemma 2.1, the $N$-party Kirwan route and Theorem B: done (`lean/NSTUProof`).
 - A Kirwan-free proof for $d\ge4$ and odd $N$: open-ended research, weeks to months, with no guarantee.
 
 ## 6. Files

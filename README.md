@@ -24,7 +24,7 @@ Theorem numbers are those of the Letter. In the Supplemental Material the same t
 | Statement | Status | Where |
 |---|---|---|
 | **Theorem 1 (two systems).** For every d, every Hermitian H and every 0 ≤ β′ ≤ β (β > 0) there is a unitary on C^d ⊗ C^d with both marginals of U(τ_β ⊗ τ_β)U† equal to τ_β′. It can be chosen real orthogonal in the energy eigenbasis and commuting with N_A − N_B, so excitations are created and destroyed only in pairs. | **Proved.** The existence statement is **machine-checked in Lean 4** (`STUProof.stu_exists_hermitian`), using only Lean's standard axioms. The structural part (real orthogonal, pair creation) is proved on paper. | `lean/`; Supplemental Material, Secs. 2–10 |
-| **Theorem 2 (any number N ≥ 2 of systems).** Same hypotheses: a unitary on (C^d)^⊗N under which **every** one-body marginal of τ_β^⊗N becomes τ_β′. This attains the bound on the total correlation. | **Proved.** The proof combines an explicit N-party vertex construction with **Kirwan's convexity theorem**, which is not formalized. Explicit Kirwan-free constructions are proved for **d ≤ 3 (all N)** and for **even N (all d)**. Not formalized in Lean yet. | `n-systems/`; Supplemental Material, Sec. 12 |
+| **Theorem 2 (any number N ≥ 2 of systems).** Same hypotheses: a unitary on (C^d)^⊗N under which **every** one-body marginal of τ_β^⊗N becomes τ_β′. This attains the bound on the total correlation. | **Proved.** The proof combines an explicit N-party vertex construction with **Kirwan's convexity theorem**, which is not formalized. Explicit Kirwan-free constructions are proved for **d ≤ 3 (all N)** and for **even N (all d)**. **Machine-checked in Lean** (`lean/NSTUProof`): without further assumptions for even N and for d ≤ 3, and for every N with Kirwan's theorem as an explicit hypothesis. | `n-systems/`, `lean/NSTUProof/`; Supplemental Material, Sec. 12 |
 | Strong spectral form ("every majorized spectrum is symmetrically reachable") | **False for every d ≥ 4**, with an explicit counterexample. It holds for d = 3 (Bakhshinezhad et al.). | Supplemental Material, Sec. 11 |
 | Kirwan-free construction for odd N with d ≥ 4 | **Open.** The step it needs (one-sided heating) held in every numerical test: d ≤ 6 with full unitaries, d ≤ 10 with exact linear programs. | `n-systems/PROOF.md`, Sec. 4 |
 
@@ -65,6 +65,28 @@ theorem stu_exists_hermitian {d : ℕ} (H : Matrix (Fin d) (Fin d) ℂ) (hH : H.
 `thermalState H β` is defined with Mathlib's matrix exponential:
 `(1 / (NormedSpace.exp ((-β) • H)).trace) • NormedSpace.exp ((-β) • H)`.
 
+### Lean: Theorem 2
+The N-system files import the two-system development, so build that first. From the `lean` folder:
+```bash
+bash check.sh && bash check_genh.sh   # Theorem 1 (see above)
+bash check_nstu.sh                    # Theorem 2: builds NSTUProof, prints 41 axiom lines, keyword scan
+```
+- Expected output: every line `depends on axioms: [propext, Classical.choice, Quot.sound]`, and the keyword scan prints `none`. It takes about 4 minutes.
+- Our run: `logs/lean_check_nstu.log`.
+- Main theorems:
+  - `nstu_exists_of_even`: every even N, no further assumptions;
+  - `nstu_exists_small_d`: d ≤ 3 and every N ≥ 2, no further assumptions;
+  - `nstu_exists_kirwan`: every N ≥ 2 and every d, with the hypothesis `KirwanSymmetricConvexityN`. This hypothesis is proved to follow from `KirwanConvexityN`, the statement of Kirwan's theorem for U(d)^N.
+  - The `_hermitian` versions of all three hold for every Hermitian H.
+
+```lean
+theorem nstu_exists_small_d {d N : ℕ} (hd : d ≤ 3) (hN : 2 ≤ N) (E : Fin d → ℝ)
+    (hE : Monotone E) (β β' : ℝ) (hβ : 0 < β) (h0 : 0 ≤ β') (h1 : β' ≤ β) :
+    ∃ U ∈ unitaryGroup (Fin N → Fin d) ℂ,
+      ∀ c, marg c (U * prodGibbs E β N * star U) = gibbsState E β'
+```
+`marg c ρ` is the one-body marginal of party c, defined explicitly as a partial trace, and `prodGibbs E β N` is the N-fold product of the thermal state.
+
 ### Theorem 1: exact certificates and checks
 Python ≥ 3.10 with numpy, sympy and mpmath.
 - Exact checkers: `code/`. See [`PROOF_OVERVIEW.md`](PROOF_OVERVIEW.md) for which checker covers which step.
@@ -97,14 +119,15 @@ From `paper/`, `tectonic main.tex` and `tectonic SM.tex` (or pdflatex, with bibt
 ## Repository layout
 - `paper/`: the Letter and Supplemental Material (PDF and LaTeX, figures in `figures/`), the scripts of the paper's
   computer checks (`checks/`), and the figure script (`figures-article/`).
-- `lean/`: the Lean 4 project for Theorem 1 (`STUProof/*.lean`, `check.sh`, `check_genh.sh`, `lakefile.toml`).
+- `lean/`: the Lean 4 project: Theorem 1 (`STUProof/*.lean`, `check.sh`, `check_genh.sh`) and Theorem 2
+  (`NSTUProof/*.lean`, `check_nstu.sh`), with `lakefile.toml`.
 - `n-systems/`: the proof notes for Theorem 2 (`PROOF.md`, `LOG.md`), the scripts, the logs and the independent
   re-implementation.
 - `math/`: write-ups and working logs of every route to Theorem 1.
 - `certificates/`: the exact certificates used by Theorem 1's constructions.
 - `code/`: independent exact checkers and generators for Theorem 1.
 - `logs/`: our verification runs.
-- `research-log/`: the Lean formalisation log.
+- `research-log/`: the Lean formalisation logs (Theorem 1 and Theorem 2).
 
 This repository supersedes `github.com/anshM123/IQOQI-Conjecture`, which holds the same two-system Lean development.
 

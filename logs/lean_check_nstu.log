@@ -1,0 +1,54 @@
+# bash check_nstu.sh (the same files and commands, run from the development tree), exit 0, about 4 minutes,
+# Lean v4.33.1, Mathlib 0df444a360eaa60ab8c11dca51a86af692955474
+== NSTUProof/NSTUBasic.lean
+== NSTUProof/NSTUEven.lean
+== NSTUProof/NSTULCS.lean
+== NSTUProof/NSTUVertex.lean
+== NSTUProof/NSTUKirwan.lean
+== NSTUProof/NSTUChain.lean
+== NSTUProof/NSTUSmallD.lean
+== NSTUProof/NSTUSanity.lean
+== NSTUProof/Axioms.lean
+'NSTUProof.marg_eq_partialTraceB' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.marg_piKron_conj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.HasSTU.glue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.HasSTU.conj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.hasSTU_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.hasSTU_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.hasSTU_of_two_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.nstu_exists_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.nstu_exists_of_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.hasSTU_hermitian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.nstu_exists_even_hermitian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.marg_eq_diagonal_of_lcs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.lcs_reachable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.lcs_reachable_perm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.binPacking_tails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.exists_constrN' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.vk_reachableN' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.symMarginalSpectraN_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.kirwanSymmetricConvexityN_of_kirwanConvexityN' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.kirwanSymmetricConvexityN_two_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.vk_mem_symMarginalSpectraN' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.gibbs_mem_symMarginalSpectraN' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.nstu_exists_kirwan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.nstu_exists_kirwan_hermitian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.nstu_exists_kirwan_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.hasSTU_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.hasSTU_of_osh' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.osh_pairs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.nstu_exists_of_condD' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.d2_cert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.d3_cert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.condD_two_of_mlr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.condD_three_of_mlr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.gibbs_mlr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.condD_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.nstu_exists_small_d' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.nstu_exists_small_d_hermitian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.marg_tensorPow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.marg_prodGibbs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.one_not_nstu' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NSTUProof.no_nstu_one_party' depends on axioms: [propext, Classical.choice, Quot.sound]
+== forbidden keywords (sorry/admit/axiom/native_decide):
+none
