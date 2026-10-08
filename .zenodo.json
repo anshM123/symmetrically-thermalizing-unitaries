@@ -1,0 +1,27 @@
+{
+  "title": "Correlations Among Any Number of Identical Quantum Systems Can Always Be Created at Minimal Energy Cost",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "Proof of the conjecture of Bakhshinezhad, Clivaz, Vitagliano, Erker, Rezakhani, Huber and Friis (J. Phys. A 52, 465303 (2019)) that symmetrically thermalizing unitaries exist in every dimension, and its extension to any number of identical systems. Theorem 1: for every local dimension d, every Hermitian Hamiltonian H and all inverse temperatures 0 <= beta' <= beta, beta > 0, there is a global unitary on C^d (x) C^d under which both marginals of two copies of the thermal state at beta become thermal at beta'. The existence statement is machine-checked in Lean 4 with Mathlib (theorem stu_exists_hermitian). Theorem 2: the same holds for any number N >= 2 of identical systems, with every one-body marginal thermal at beta'. Its proof combines an explicit N-party vertex construction with Kirwan's convexity theorem; explicit Kirwan-free constructions are given for d <= 3 and for even N. Correlations among identical thermal systems can therefore always be created at the minimal energy cost. The repository contains the Letter and Supplemental Material (PDF and LaTeX), the Lean 4 formalisation, exact certificates, independent checkers and verification logs.",
+  "creators": [
+    {
+      "name": "Mishra, Ansh"
+    },
+    {
+      "name": "Senthilkumar, Aryan"
+    }
+  ],
+  "license": "mit",
+  "access_right": "open",
+  "keywords": [
+    "quantum thermodynamics",
+    "symmetrically thermalizing unitaries",
+    "creation of correlations",
+    "quantum marginal problem",
+    "majorization",
+    "Lean 4",
+    "formal verification"
+  ],
+  "version": "1.0",
+  "language": "eng"
+}

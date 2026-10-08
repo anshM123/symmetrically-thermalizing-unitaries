@@ -1,0 +1,14 @@
+  d=4: E=[0.    0.005 0.008 0.093], beta=5.91, t=0.151: (D) fails; best residual 2.1e-15  [1s]
+  d=4: E=[0.    0.289 0.815 2.263], beta=4.64, t=0.029: (D) fails; best residual 2.9e-15  [1s]
+  d=4: E=[0.    0.    0.014 0.679], beta=2.53, t=0.007: (D) fails; best residual 1.2e-15  [1s]
+  d=4: E=[0.    0.081 0.252 0.456], beta=5.03, t=0.018: (D) fails; best residual 7.2e-16  [1s]
+  d=4: E=[0.    1.053 1.271 2.119], beta=3.39, t=0.012: (D) fails; best residual 1.3e-14  [2s]
+  d=4: E=[0.    0.206 1.139 1.953], beta=4.31, t=0.021: (D) fails; best residual 6.7e-16  [2s]
+d=4: direct 3-STU found (residual < 1e-12) in 6/6 hard instances
+  d=5: E=[0.    0.166 0.254 1.962 2.532], beta=4.44, t=0.049: (D) fails; best residual 2.6e-15  [2s]
+  d=5: E=[0.    0.001 0.002 0.084 0.547], beta=4.24, t=0.198: (D) fails; best residual 3.1e-15  [2s]
+  d=5: E=[0.    0.012 0.262 0.281 0.317], beta=4.84, t=0.005: (D) fails; best residual 1.6e-15  [2s]
+  d=5: E=[0.    0.355 0.514 0.522 0.857], beta=4.20, t=0.000: (D) fails; best residual 3.3e-16  [2s]
+  d=5: E=[0.    0.049 0.268 0.815 1.36 ], beta=5.62, t=0.040: (D) fails; best residual 7.5e-16  [2s]
+  d=5: E=[0.    0.045 0.259 0.441 0.519], beta=3.73, t=0.095: (D) fails; best residual 4.2e-16  [2s]
+d=5: direct 3-STU found (residual < 1e-12) in 6/6 hard instances

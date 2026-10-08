@@ -1,0 +1,57 @@
+exact: N=2 d=2: all k, 4 spectra each: OK (cumulative 8 cases)
+exact: N=2 d=3: all k, 4 spectra each: OK (cumulative 20 cases)
+exact: N=2 d=4: all k, 4 spectra each: OK (cumulative 36 cases)
+exact: N=2 d=5: all k, 4 spectra each: OK (cumulative 56 cases)
+exact: N=2 d=6: all k, 4 spectra each: OK (cumulative 80 cases)
+exact: N=2 d=7: all k, 4 spectra each: OK (cumulative 108 cases)
+exact: N=2 d=8: all k, 4 spectra each: OK (cumulative 140 cases)
+exact: N=3 d=2: all k, 4 spectra each: OK (cumulative 148 cases)
+exact: N=3 d=3: all k, 4 spectra each: OK (cumulative 160 cases)
+exact: N=3 d=4: all k, 4 spectra each: OK (cumulative 176 cases)
+exact: N=3 d=5: all k, 4 spectra each: OK (cumulative 196 cases)
+exact: N=3 d=6: all k, 4 spectra each: OK (cumulative 220 cases)
+exact: N=3 d=7: all k, 4 spectra each: OK (cumulative 248 cases)
+exact: N=3 d=8: all k, 4 spectra each: OK (cumulative 280 cases)
+exact: N=4 d=2: all k, 4 spectra each: OK (cumulative 288 cases)
+exact: N=4 d=3: all k, 4 spectra each: OK (cumulative 300 cases)
+exact: N=4 d=4: all k, 4 spectra each: OK (cumulative 316 cases)
+exact: N=4 d=5: all k, 4 spectra each: OK (cumulative 336 cases)
+exact: N=4 d=6: all k, 4 spectra each: OK (cumulative 360 cases)
+exact: N=4 d=7: all k, 4 spectra each: OK (cumulative 388 cases)
+exact: N=4 d=8: all k, 4 spectra each: OK (cumulative 420 cases)
+exact: N=5 d=2: all k, 4 spectra each: OK (cumulative 428 cases)
+exact: N=5 d=3: all k, 4 spectra each: OK (cumulative 440 cases)
+exact: N=5 d=4: all k, 4 spectra each: OK (cumulative 456 cases)
+exact: N=5 d=5: all k, 4 spectra each: OK (cumulative 476 cases)
+exact: N=5 d=6: all k, 4 spectra each: OK (cumulative 500 cases)
+exact: N=5 d=7: all k, 4 spectra each: OK (cumulative 528 cases)
+exact: N=5 d=8: all k, 4 spectra each: OK (cumulative 560 cases)
+exact: N=6 d=2: all k, 4 spectra each: OK (cumulative 568 cases)
+exact: N=6 d=3: all k, 4 spectra each: OK (cumulative 580 cases)
+exact: N=6 d=4: all k, 4 spectra each: OK (cumulative 596 cases)
+exact: N=6 d=5: all k, 4 spectra each: OK (cumulative 616 cases)
+EXACT CHECK PASSED: 616 (N,d,k,p) instances; min relative bin slack n*(1/n - max W) = 0.1254
+quantum: N=2 d=2 (D=4): all k x 4 spectra; running worst marginal/spec err 1.11e-16, worst ||OO^T-1|| 1.11e-16
+quantum: N=2 d=3 (D=9): all k x 4 spectra; running worst marginal/spec err 1.67e-16, worst ||OO^T-1|| 2.22e-16
+quantum: N=2 d=4 (D=16): all k x 4 spectra; running worst marginal/spec err 2.22e-16, worst ||OO^T-1|| 2.22e-16
+quantum: N=2 d=5 (D=25): all k x 4 spectra; running worst marginal/spec err 2.22e-16, worst ||OO^T-1|| 2.22e-16
+quantum: N=2 d=6 (D=36): all k x 4 spectra; running worst marginal/spec err 2.50e-16, worst ||OO^T-1|| 2.22e-16
+quantum: N=2 d=8 (D=64): all k x 4 spectra; running worst marginal/spec err 2.78e-16, worst ||OO^T-1|| 3.33e-16
+quantum: N=2 d=10 (D=100): all k x 4 spectra; running worst marginal/spec err 3.75e-16, worst ||OO^T-1|| 4.44e-16
+quantum: N=2 d=12 (D=144): all k x 4 spectra; running worst marginal/spec err 3.75e-16, worst ||OO^T-1|| 4.44e-16
+quantum: N=3 d=2 (D=8): all k x 4 spectra; running worst marginal/spec err 3.75e-16, worst ||OO^T-1|| 4.44e-16
+quantum: N=3 d=3 (D=27): all k x 4 spectra; running worst marginal/spec err 3.75e-16, worst ||OO^T-1|| 4.44e-16
+quantum: N=3 d=4 (D=64): all k x 4 spectra; running worst marginal/spec err 3.75e-16, worst ||OO^T-1|| 4.44e-16
+quantum: N=3 d=5 (D=125): all k x 4 spectra; running worst marginal/spec err 3.75e-16, worst ||OO^T-1|| 4.44e-16
+quantum: N=3 d=6 (D=216): all k x 4 spectra; running worst marginal/spec err 3.75e-16, worst ||OO^T-1|| 4.44e-16
+quantum: N=3 d=7 (D=343): all k x 4 spectra; running worst marginal/spec err 3.75e-16, worst ||OO^T-1|| 4.44e-16
+quantum: N=4 d=2 (D=16): all k x 4 spectra; running worst marginal/spec err 3.75e-16, worst ||OO^T-1|| 4.44e-16
+quantum: N=4 d=3 (D=81): all k x 4 spectra; running worst marginal/spec err 3.75e-16, worst ||OO^T-1|| 4.44e-16
+quantum: N=4 d=4 (D=256): all k x 4 spectra; running worst marginal/spec err 4.44e-16, worst ||OO^T-1|| 4.44e-16
+quantum: N=5 d=2 (D=32): all k x 4 spectra; running worst marginal/spec err 4.44e-16, worst ||OO^T-1|| 4.44e-16
+quantum: N=5 d=3 (D=243): all k x 4 spectra; running worst marginal/spec err 1.05e-15, worst ||OO^T-1|| 4.44e-16
+quantum: N=6 d=2 (D=64): all k x 4 spectra; running worst marginal/spec err 1.05e-15, worst ||OO^T-1|| 4.44e-16
+quantum: N=7 d=2 (D=128): all k x 4 spectra; running worst marginal/spec err 1.17e-15, worst ||OO^T-1|| 4.44e-16
+quantum: N=8 d=2 (D=256): all k x 4 spectra; running worst marginal/spec err 3.66e-15, worst ||OO^T-1|| 4.44e-16
+QUANTUM CHECK: 388 explicit states; worst |marginal - diag(v_k)| or spectrum err = 3.66e-15; orthogonality defect 4.44e-16
+done in 53s

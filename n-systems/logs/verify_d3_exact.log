@@ -1,0 +1,32 @@
+V1 (q=p)           C0lo q0<=p0     : OK  (identically 0)
+V1 (q=p)           C0hi x0>=lam2   : OK  (5 terms, min coeff 2)
+V1 (q=p)           C1hi x1<=lam0   : OK  (3 terms, min coeff 2)
+V1 (q=p)           C1lo x1>=lam2   : OK  (2 terms, min coeff 2)
+V1 (q=p)           C2lo q2>=p2     : OK  (identically 0)
+V1 (q=p)           C2hi x2<=lam0   : OK  (5 terms, min coeff 2)
+V2 (uniform)       C0lo q0<=p0     : OK  (2 terms, min coeff 1)
+V2 (uniform)       C0hi x0>=lam2   : OK  (1 terms, min coeff 1)
+V2 (uniform)       C1hi x1<=lam0   : OK  (2 terms, min coeff 1)
+V2 (uniform)       C1lo x1>=lam2   : OK  (2 terms, min coeff 1)
+V2 (uniform)       C2lo q2>=p2     : OK  (2 terms, min coeff 1)
+V2 (uniform)       C2hi x2<=lam0   : OK  (1 terms, min coeff 1)
+V3 (p0,p1,p1)/Z    C0lo q0<=p0     : OK  (3 terms, min coeff 1)
+V3 (p0,p1,p1)/Z    C0hi x0>=lam2   : OK  (5 terms, min coeff 1)
+V3 (p0,p1,p1)/Z    C1hi x1<=lam0   : OK  (5 terms, min coeff 1)
+V3 (p0,p1,p1)/Z    C1lo x1>=lam2   : OK  (2 terms, min coeff 1)
+V3 (p0,p1,p1)/Z    C2lo q2>=p2     : OK  (3 terms, min coeff 1)
+V3 (p0,p1,p1)/Z    C2hi x2<=lam0   : OK  (3 terms, min coeff 2)
+V4 (p1,p1,p2)/Z    C0lo q0<=p0     : OK  (2 terms, min coeff 1)
+V4 (p1,p1,p2)/Z    C0hi x0>=lam2   : OK  (3 terms, min coeff 1)
+V4 (p1,p1,p2)/Z    C1hi x1<=lam0   : OK  (2 terms, min coeff 1)
+V4 (p1,p1,p2)/Z    C1lo x1>=lam2   : OK  (4 terms, min coeff 1)
+V4 (p1,p1,p2)/Z    C2lo q2>=p2     : OK  (1 terms, min coeff 1)
+V4 (p1,p1,p2)/Z    C2hi x2<=lam0   : OK  (4 terms, min coeff 1)
+d=3 vertex certificate: ALL CONDITIONS HOLD
+d=2: lam0 - x1 = (p0 + 3*q0 - 2)/2  (= (3 q0 + p0 - 2)/2 >= 0 for q0,p0 >= 1/2)
+flow identity eps = c/2 solves conservation, d=2: True
+flow identity eps = c/2 solves conservation, d=3: True
+flow identity eps = c/2 solves conservation, d=4: True
+flow identity eps = c/2 solves conservation, d=5: True
+flow identity eps = c/2 solves conservation, d=6: True
+flow identity eps = c/2 solves conservation, d=7: True
